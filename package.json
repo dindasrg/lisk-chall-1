@@ -36,10 +36,20 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
+    "@nomicfoundation/hardhat-verify": "^3.0.4",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "^19",
+    "eslint": "^9.38.0",
+    "hardhat": "^3.0.9",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "patch-package": "^8.0.1"
   },
   "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^19.2.0",
     "tailwind-merge": "^2.4.0"
   }
 }

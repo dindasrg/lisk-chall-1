@@ -127,9 +127,10 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.rpc.zora.energy",
       accounts: [deployerPrivateKey],
     },
-    liskSepolia: {
+    "lisk-sepolia-testnet": {
       url: "https://rpc.sepolia-api.lisk.com",
       accounts: [deployerPrivateKey],
+      chainId: 4202,
     },
     mode: {
       url: "https://mainnet.mode.network",
@@ -142,8 +143,21 @@ const config: HardhatUserConfig = {
   },
   // configuration for harhdat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: {
+      "lisk-sepolia-testnet": process.env.DEPLOYER_PRIVATE_KEY || "",
+    },
+    customChains: [
+      {
+        network: "lisk-sepolia-testnet",
+        chainId: 4202,
+        urls: {
+          apiURL: "https://sepolia-blockscout.lisk.com/api",
+          browserURL: "https://sepolia-blockscout.lisk.com",
+        },
+      },
+    ],
   },
+
   // configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
     etherscan: {
